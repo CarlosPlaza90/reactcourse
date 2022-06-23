@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 
 class DishDetail extends Component{
     constructor(props) {
@@ -73,17 +73,27 @@ class DishDetail extends Component{
 
         console.log(dish);
         
+
+        
         if (dish == null) {
             return (<div></div>);
         }
+        
 
-        const dishItem = this.renderDish(dish);
-        const dishComment = this.renderComments(dish.comments);
-
+            const dishItem = this.renderDish(dish);
+            const dishComment = this.renderComments(dish.comments);
+        
         return (
+            <div class = "container">
             <div className='row'>
+
                 {dishItem}
+                
                 {dishComment}
+
+                
+                
+            </div>
             </div>
         )
     }
